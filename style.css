@@ -1,0 +1,15 @@
+
+.here {
+    width: 100px;
+    height: 40px;
+}
+
+#box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+#result {
+    font-size: 18px;
+}
