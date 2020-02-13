@@ -1,6 +1,15 @@
+function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("#output").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
+
+
 $(document).ready(function() {
 
-
+    
 
 
     $("#interest").click(function() {
@@ -14,6 +23,52 @@ $(document).ready(function() {
 
         $("#result").html(answer)
     });
+
+    // Function for PHJ
+
+    //Input to type name
+
+    //Click relationship
+
+    //Click button for each set of words with comma at the end
+
+    $("#rmd").click(function() {
+
+        var rmdValue = $("#rmd").val();
+        
+        $("#output").append(rmdValue);
+        
+    })
+
+    $("#ben").click(function() {
+
+        var benValue = $("#ben").val();
+        $("#output").append(benValue);
+
+    })
+
+    $("#xfer").click(function() {
+
+        var xferValue = $("#xfer").val();
+        $("#output").append(xferValue);
+
+    })
+
+
+
+    //When clicked, append each item to output - realtime so shows output as clicked
+
+    //When "copy" is clicked, output copied
+
+    
+    
+    
+   
+
+
+
+
+
 
     $("#thisButton").click(function() {
 
