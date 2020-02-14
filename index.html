@@ -20,7 +20,57 @@
 
         <div class = "row">
 
-            <div class = "col-sm-3">
+            
+
+            <!--PHJ-->
+
+            <div class = "col-sm-2">
+
+                <input type = "text" id = "name">
+                <button class="btn btn-outline-secondary" id = "ra" type = "button" value = " - RA -">RA</button>
+                <button class="btn btn-outline-secondary" id = "rep" type = "button" value = " - rep -">rep</button>
+                <button class="btn btn-outline-secondary" id = "po" type = "button" value = " - PO -">PO</button>
+                <button class="btn btn-outline-secondary" id = "un" type = "button" value = " - unauth -">Unauth</button>
+                <button class="btn btn-outline-secondary" id = "sa" type = "button" value = " - sales -">Sales</button>
+                <button class="btn btn-outline-secondary" id = "toc" type = "button" value = " - TOC -">TOC</button>
+
+                <input type="text" id= "other">
+
+                <div id = "core"></div>
+                <button class="btn btn-outline-secondary" id = "add" type = "button">Add</button>
+
+
+                
+                <button class="btn btn-outline-secondary" onclick="copyToClipboard('#output')" id = "copyThis">Copy to Clipboard</button>
+               
+                <div id = "output"></div>
+
+            </div>
+
+            <div class = "col-sm-10">
+
+
+                <button class="btn btn-outline-secondary" id = "rmd" type = "button" value = " RMD,">RMD</button>
+                <button class="btn btn-outline-secondary" id = "xfer" type = "button" value = " transfer status,">Xfer</button>
+                <button class="btn btn-outline-secondary" id = "ben" type = "button" value = " beneficiary info,">Ben</button>
+                <button class="btn btn-outline-secondary" id = "sur" type = "button" value = " out of surrender,">Out of Surr</button>
+         
+
+            </div>
+
+
+        </div>
+                
+        
+
+
+
+                
+            
+
+            
+
+                <!--
 
                 <input type = "input" id = "numone" class = "here" placeholder = "Value 1">
                 <input type = "input" id = "numtwo" class = "here" placeholder = "Value 2">
@@ -31,52 +81,21 @@
                 <button id = "interest" type = "button">Calculate</button>
                 <div id = "result"></div>
 
+                -->
+
                 
 
 
             
 
-        </div>
-
-            <!--PHJ-->
-
-            <div class = "col-sm-3">
-
-                <input type = "text" id = "name">
-                <button class="btn btn-outline-secondary" id = "ra" type = "button" value = " - RA - ">RA</button>
-                <button class="btn btn-outline-secondary" id = "rep" type = "button" value = "- rep - ">rep</button>
-                <button class="btn btn-outline-secondary" id = "po" type = "button" value = "- PO - ">PO</button>
-                <button class="btn btn-outline-secondary" id = "un" type = "button" value = "- unauth - ">Unauth</button>
-
-
-                <button class="btn btn-outline-secondary" id = "rmd" type = "button" value = "RMD">RMD</button>
-                <button class="btn btn-outline-secondary" id = "xfer" type = "button" value = "transfer status">Xfer</button>
-                <button class="btn btn-outline-secondary" id = "ben" type = "button" value = "beneficiary info">Ben</button>
-                <div id = "output"></div>
-                <button class="btn btn-outline-secondary" onclick="copyToClipboard('#output')" id = "copyThis">Copy to Clipboard</button>
-                <input type="text" value="Hello World" id="myInput">
-
-
-
-                
         
 
+            
 
 
-                
-            </div>
+        
 
-            <div class = "col-sm-3">
-                
-            </div>
-
-
-        </div>
-
-        <div class = "row">
-
-
-        </div>
+        
 
     </div>
 

@@ -4,6 +4,19 @@ $('#name').on('keyup', function(){
     $('#output').html($(this).val());
 });
 
+$('#other').on('keyup', function(){
+    $('#core').html($(this).val());
+});
+
+$("#add").click(function(){
+
+    var added = $("#core").text();
+    $("#output").append(" " + added);
+
+    console.log(added);
+    
+})
+
 
 function copyToClipboard(element) {
     //Prepend name value
@@ -66,6 +79,22 @@ $(document).ready(function() {
         $("#output").append(rmdValue);
         
     })
+
+    $("#sa").click(function() {
+
+        var rmdValue = $("#sa").val();
+        
+        $("#output").append(rmdValue);
+        
+    })
+
+    $("#toc").click(function() {
+
+        var rmdValue = $("#toc").val();
+        
+        $("#output").append(rmdValue);
+        
+    })
     
     
     
@@ -88,6 +117,13 @@ $(document).ready(function() {
 
         var xferValue = $("#xfer").val();
         $("#output").append(xferValue);
+
+    })
+
+    $("#sur").click(function() {
+
+        var surValue= $("#sur").val();
+        $("#output").append(surValue);
 
     })
 

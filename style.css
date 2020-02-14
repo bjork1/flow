@@ -16,5 +16,18 @@
 
 #name {
     height: 40px;
-    width: 100px;
+    width: 100%;
+}
+
+#output {
+    height: 50px;
+}
+
+#core {
+    height: 50px;
+}
+
+#other {
+    width: 100%;
+    height: 100px;
 }
