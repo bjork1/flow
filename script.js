@@ -1,4 +1,15 @@
+
+
+$('#name').on('keyup', function(){
+    $('#output').html($(this).val());
+});
+
+
 function copyToClipboard(element) {
+    //Prepend name value
+    // var name = printName =>
+    // $("#output").prepend($("#name"));
+    //$("#output").append(name);
     var $temp = $("<input>");
     $("#output").append($temp);
     $temp.val($(element).text()).select();
@@ -32,6 +43,32 @@ $(document).ready(function() {
 
     //Click button for each set of words with comma at the end
 
+    $("#rep").click(function() {
+
+        var rmdValue = $("#rep").val();
+        
+        $("#output").append(rmdValue);
+        
+    })
+
+    $("#ra").click(function() {
+
+        var rmdValue = $("#ra").val();
+        
+        $("#output").append(rmdValue);
+        
+    })
+
+    $("#po").click(function() {
+
+        var rmdValue = $("#po").val();
+        
+        $("#output").append(rmdValue);
+        
+    })
+    
+    
+    
     $("#rmd").click(function() {
 
         var rmdValue = $("#rmd").val();

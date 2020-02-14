@@ -42,11 +42,18 @@
 
             <div class = "col-sm-3">
 
-                <button id = "rmd" type = "button" value = "RMD">RMD</button>
-                <button id = "xfer" type = "button" value = "transfer status">Xfer</button>
-                <button id = "ben" type = "button" value = "beneficiary info">Ben</button>
+                <input type = "text" id = "name">
+                <button class="btn btn-outline-secondary" id = "ra" type = "button" value = " - RA - ">RA</button>
+                <button class="btn btn-outline-secondary" id = "rep" type = "button" value = "- rep - ">rep</button>
+                <button class="btn btn-outline-secondary" id = "po" type = "button" value = "- PO - ">PO</button>
+                <button class="btn btn-outline-secondary" id = "un" type = "button" value = "- unauth - ">Unauth</button>
+
+
+                <button class="btn btn-outline-secondary" id = "rmd" type = "button" value = "RMD">RMD</button>
+                <button class="btn btn-outline-secondary" id = "xfer" type = "button" value = "transfer status">Xfer</button>
+                <button class="btn btn-outline-secondary" id = "ben" type = "button" value = "beneficiary info">Ben</button>
                 <div id = "output"></div>
-                <button onclick="copyToClipboard('#output')">Copy to Clipboard</button>
+                <button class="btn btn-outline-secondary" onclick="copyToClipboard('#output')" id = "copyThis">Copy to Clipboard</button>
                 <input type="text" value="Hello World" id="myInput">
 
 

@@ -13,3 +13,8 @@
 #result {
     font-size: 18px;
 }
+
+#name {
+    height: 40px;
+    width: 100px;
+}
