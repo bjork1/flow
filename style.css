@@ -14,13 +14,17 @@
     font-size: 18px;
 }
 
-#name {
+.name {
     height: 40px;
-    width: 100%;
+    width: 40%;
+    margin: 10px;
 }
 
 #output {
     height: 50px;
+    background-color: lightblue;
+    border: 1px solid darkblue;
+    width: 80%;
 }
 
 #core {
@@ -28,6 +32,29 @@
 }
 
 #other {
-    width: 100%;
-    height: 100px;
+    width: 80%;
+    height: 80px;
+}
+
+.btn {
+    margin: 10px;
+    
+}
+
+#add {
+    width: 15%;
+}
+
+#copyThis {
+    width: 15%;
+}
+
+.space {
+    padding-top: 10px;
+}
+
+.test {
+    background-color: lightsalmon;
+    border: 1px solid red;
+    height: 50px;
 }

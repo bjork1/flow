@@ -1,21 +1,46 @@
+var $titleInput = $("#name");
+
+var $willWork = $("#nameTwo");
+
+var $otherVal = $("#other");
 
 
-$('#name').on('keyup', function(){
-    $('#output').html($(this).val());
-});
+//Select the preview h1 tag
+var $previewTitle = $("#output");
 
-$('#other').on('keyup', function(){
-    $('#core').html($(this).val());
-});
 
-$("#add").click(function(){
 
-    var added = $("#core").text();
-    $("#output").append(" " + added);
 
-    console.log(added);
+
+
+var $rmdTestVal = $("#rmdTest");
+
+// Every second update the preview
+var previewTimer = setInterval(updatePreview, 1000);
+
+function updatePreview(){  
+  //Get the user's input
+
+  
+  var titleValue = $titleInput.val();
+  var nextValue = $willWork.val();
+  var thirdVal = $otherVal.val();
+  //var tryValue = $rmdValue.val();
+  //var tryVal = $rmdTestVal.val();
+
+
+  $previewTitle.text(titleValue + nextValue + thirdVal);
+
     
-})
+}
+
+
+  
+    
+    //$("#output").append(rmdValue);
+
+
+    //Set the user input as the preview title. 
 
 
 function copyToClipboard(element) {
@@ -29,6 +54,106 @@ function copyToClipboard(element) {
     document.execCommand("copy");
     $temp.remove();
 }
+
+
+
+
+/*
+
+$("#output").append($("input").map(function() {
+    return $(this).val();
+})
+.get()
+.join(", "));
+*/
+
+/*
+$('#name').keyup(function(){
+
+pleaseWork = $(this).val();
+$('#nameTest').html(pleaseWork);
+//$(this).val();
+
+//$('#nameTest').html(global);
+
+
+$('#output').html($('#nameTest').text());
+
+});
+*/
+
+
+//console.log(pleaseWork);
+
+/*
+
+$('#nameTwo').on('keyup', function(){
+    $('#nameTest2').html($(this).val());
+
+    $('#output').html($('#nameTest2').text());
+   
+});
+
+
+
+$('#other').on('keyup', function(){
+    $('#core').html($(this).val());
+
+    $('#output').html($('#core').text());
+});
+
+$("#add").click(function(){
+
+    var added = $("#core").text();
+    $("#output").append(" " + added);
+
+    console.log(added);
+    
+});
+
+
+
+
+
+
+
+
+
+    //Prepend name value
+    // var name = printName =>
+    // $("#output").prepend($("#name"));
+    //$("#output").append(name);
+    
+    $("#output").html($("#name").text());
+
+
+
+
+
+
+
+
+function copyToClipboard(element) {
+    //Prepend name value
+    // var name = printName =>
+    // $("#output").prepend($("#name"));
+    //$("#output").append(name);
+    var $temp = $("<input>");
+    $("#output").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
+
+/*
+$("#copyThis").keypress(function(e) {
+    if(e.which == 13){
+        $(".button").click()
+    };
+});
+
+*/
+
 
 
 $(document).ready(function() {
@@ -56,13 +181,7 @@ $(document).ready(function() {
 
     //Click button for each set of words with comma at the end
 
-    $("#rep").click(function() {
-
-        var rmdValue = $("#rep").val();
-        
-        $("#output").append(rmdValue);
-        
-    })
+    
 
     $("#ra").click(function() {
 
