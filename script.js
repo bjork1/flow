@@ -23,13 +23,13 @@ function updatePreview(){
 
   
   var titleValue = $titleInput.val();
-  var nextValue = $willWork.val();
+  //var nextValue = $willWork.val();
   var thirdVal = $otherVal.val();
   //var tryValue = $rmdValue.val();
   //var tryVal = $rmdTestVal.val();
 
 
-  $previewTitle.text(titleValue + nextValue + thirdVal);
+  $previewTitle.text(titleValue + thirdVal);
 
     
 }
