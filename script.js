@@ -2,6 +2,8 @@ var $titleInput = $("#name");
 
 var $willWork = $("#nameTwo");
 
+var $relationship = $("#relationship");
+
 var $otherVal = $("#other");
 
 
@@ -9,9 +11,20 @@ var $otherVal = $("#other");
 var $previewTitle = $("#output");
 
 
+$("#ra").click(function() {
+
+    var rmdValue = $("#ra").val();
+    
+    $("#output").append(rmdValue);
+    
+})
+
+/*
+function returnValue(element) {
 
 
-
+}
+*/
 
 var $rmdTestVal = $("#rmdTest");
 
@@ -24,12 +37,14 @@ function updatePreview(){
   
   var titleValue = $titleInput.val();
   //var nextValue = $willWork.val();
+
+  var relationVal = " - " + $relationship.val() + " - ";
   var thirdVal = $otherVal.val();
   //var tryValue = $rmdValue.val();
   //var tryVal = $rmdTestVal.val();
 
 
-  $previewTitle.text(titleValue + thirdVal);
+  $previewTitle.text(titleValue + relationVal + thirdVal);
 
     
 }
@@ -56,6 +71,14 @@ function copyToClipboard(element) {
 }
 
 
+
+    /*
+    $("#search").keypress(function(e) {
+        if(e.which == 13){
+            $(".button").click()
+        };
+    });
+    */
 
 
 /*
@@ -183,13 +206,7 @@ $(document).ready(function() {
 
     
 
-    $("#ra").click(function() {
-
-        var rmdValue = $("#ra").val();
-        
-        $("#output").append(rmdValue);
-        
-    })
+    
 
     $("#po").click(function() {
 
