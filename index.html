@@ -13,215 +13,157 @@
 </head>
 <body>
 
-
-    <!-- Col 1 - Interest rate calculator -->
-
     <div class = "container">
 
         <div class = "row">
 
-            <input type = "text" class = "name" id = "name" placeholder = "Names" value = "">
-           <!-- <input type = "text" class = "name" id = "nameTwo" placeholder = "Name Two" value = ""> -->
-
-
+            <input type = "text" class = "name" placeholder = "Contract Number" id = "contractnum">
 
         </div>
-
-        
-
-        <div class = "row">
-
-            <input type = "text" class = "name" id = "relationship" placeholder = "Relationship" value = "">
-
-            <!--
-
-            <button class="btn btn-outline-secondary" onclick="copyToClipboard('#output')" id = "ra" type = "button" value = " - RA -">RA</button>
-            <button class="btn btn-outline-secondary" id = "rep" type = "button" value = " - rep -">rep</button>
-            <button class="btn btn-outline-secondary" id = "po" type = "button" value = " - PO -">PO</button>
-            <button class="btn btn-outline-secondary" id = "un" type = "button" value = " - unauth -">Unauth</button>
-            <button class="btn btn-outline-secondary" id = "sa" type = "button" value = " - sales -">Sales</button>
-            <button class="btn btn-outline-secondary" id = "toc" type = "button" value = " - TOC -">TOC</button>
-
-            -->
-        </div>
-
-    
 
         <div class = "row">
 
 
-                <input type="text" id= "other" value = "">
-
-
-                <!--
-
-                <button class="btn btn-outline-secondary" id = "add" type = "button">Add</button>
-
-
-                -->
-        
+                <input type = "text" class = "name" id = "name" placeholder = "Names" value = "">
 
 
 
+                <input type = "text" class = "name" id = "relationship" placeholder = "Relationship" value = "">
+
+
+        </div>
+
+        <div class = "row">
+
+            <input type="text" id= "other" class = "other" value = "">
+ 
         </div>
 
         <div class = "row space">
 
-            
+            <div id = "output" class = "output"></div>
+              
+            <button class="btn btn-outline-secondary copyThis" type = "button" onclick="copyToClipboard('#output')" id = "copyThis">Copy</button>
 
-
-            
-
-                
-                
-
-            <div id = "output"></div>
-
-                
-
-
-                
-            <button class="btn btn-outline-secondary" type = "button" onclick="copyToClipboard('#output')" id = "copyThis">Copy</button>
+            <button class = "btn btn-outline-secondary copyThis" type = "button" id = "clear">Clear</button>
                
-                
-
-           
-
-
-
         </div>
 
         <!--
 
         <div class = "row">
 
-            <button class="btn btn-outline-secondary" id = "rmd" type = "button" value = " RMD,">RMD</button>
-                <button class="btn btn-outline-secondary" id = "xfer" type = "button" value = " transfer status,">Xfer</button>
-                <button class="btn btn-outline-secondary" id = "ben" type = "button" value = " beneficiary info,">Ben</button>
-                <button class="btn btn-outline-secondary" id = "sur" type = "button" value = " out of surrender,">Out of Surr</button>
+            
 
 
-        </div>
+            
+            <button class="btn btn-outline-secondary" id = "rep" type = "text" value = " - rep - ">Rep</button>
+            <button class="btn btn-outline-secondary" id = "ra" type = "text" value = " - RA - ">RA</button>
+            <button class="btn btn-outline-secondary" id = "po" type = "text" value = " - PO - ">PO</button>
+            <button class="btn btn-outline-secondary" id = "unauth" type = "text" value = " - unauth - ">Unauth</button>
+            <button class="btn btn-outline-secondary" id = "toc" type = "text" value = " - TOC - ">TOC</button>
+            <button class="btn btn-outline-secondary" id = "bene" type = "text" value = " - beneficiary - ">bene</button>
+
+        </div> 
 
     -->
-
-
-        <!--
-        <div class = "row test" id = "nameTest">
-
-
-
-        </div>
-
-        <div class = "row test" id = "nameTest2">
-
-
-
-        </div>
-
-        <div class = "row test" id = "test">
-
-        -->
-            <!-- Grabs info from the general text box-->
-
-            <!--
-            <div id = "core"></div>
-
-
-        </div>
-
-        <div class = "row test" id = "rmdTest">
-
-
-
-        </div>
-
-
     
+<div class = "row">
+
+    <div id = "repDiv">
 
     </div>
 
-    
-    
-                
-        
-
-
-
-                
-            
-
--->
-
-                <!--
-
-                <input type = "input" id = "numone" class = "here" placeholder = "Value 1">
-                <input type = "input" id = "numtwo" class = "here" placeholder = "Value 2">
-                <input type = "input" id = "years" class = "here" placeholder = "Years">
-
-
-
-                <button id = "interest" type = "button">Calculate</button>
-                <div id = "result"></div>
-
-                -->
-
-                
-
-
-            
-
-        
-
-            
-
-
-        
-
-        
+    <div id = "raDiv">
 
     </div>
 
+    <div id = "poDiv">
 
-    <!--
-
-
-    
-    <div id = "box">
-
-        <div id = "today">
-
-            <p id = "todayTwo" value = "25">
-                50
-            </p>
-
-        </div>
-
-        <div id = "input">
-
-        <input id = "number" type = "input" placeholder = "Enter birthday here">
-
-        </div>
-        <div id = clickHere>
-
-            <button id = "thisButton">Search</button>
-        </div>
-
-    <div id = "age">
-
-        <p id = "result">
-        </p>
     </div>
 
+    <div id = "unDiv">
 
--->
-    
+    </div>
+
+    <div id = "tocDiv">
+
+    </div>
+
+    <div id = "beneDiv">
+
+    </div>
+
+</div>
+
+<div class = "row">
+
+    <input type = "text" class = "name" placeholder = "Contract Number">
+
+</div>
+
+<div class = "row">
+
+    <input type = "text" class = "name" id = "nameTwo" placeholder = "Names" value = "">
+
+    <input type = "text" class = "name" id = "relationshipTwo" placeholder = "Relationship" value = "">
+
+</div>
 
 
+    <div class = "row">
 
+        <input type="text" id= "otherTwo" class = "other" value = "">
 
+    </div>
 
-    
+    <div class = "row space">
+
+        <div id = "outputTwo" class = "output"></div>
+          
+        <button class="btn btn-outline-secondary copyThis" type = "button" onclick="copyToClipboardTwo('#outputTwo')" id = "copyThisTwo">Copy</button>
+           
+    </div>
+
+<div id = "buttonVal" class = "row">
+
+<div id = "repDivTwo">
+
+</div>
+
+<div id = "raDivTwo">
+
+</div>
+
+<div id = "poDivTwo">
+
+</div>
+
+<div id = "unDivTwo">
+
+</div>
+
+<div id = "tocDivTwo">
+
+</div>
+
+<div id = "beneDiv">
+
+</div>
+
+</div>
+
+<div class = "row">
+
+    <div id = "change">
+
+    <button class="btn btn-outline-secondary" id = "add" type = "text">+</button>
+
+    </div>
+
+</div>
+
+</div>
     
 </body>
 

@@ -16,11 +16,11 @@
 
 .name {
     height: 40px;
-    width: 40%;
     margin: 10px;
+    width: 40%;
 }
 
-#output {
+.output {
     height: 50px;
     background-color: lightblue;
     border: 1px solid darkblue;
@@ -31,7 +31,7 @@
     height: 50px;
 }
 
-#other {
+.other {
     width: 80%;
     height: 80px;
 }
@@ -45,7 +45,7 @@
     width: 15%;
 }
 
-#copyThis {
+.copyThis {
     width: 15%;
 }
 
@@ -57,4 +57,9 @@
     background-color: lightsalmon;
     border: 1px solid red;
     height: 50px;
+}
+
+.active {
+    color: hotpink;
+    background-color: yellowgreen;
 }

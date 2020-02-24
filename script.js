@@ -1,23 +1,140 @@
+//Section 1 Variables & Function
+
 var $titleInput = $("#name");
-
-var $willWork = $("#nameTwo");
-
 var $relationship = $("#relationship");
-
 var $otherVal = $("#other");
-
-
-//Select the preview h1 tag
+var $testThis = $("#heyhey");
 var $previewTitle = $("#output");
+var previewTimer = setInterval(updatePreview, 1000);
 
+function updatePreview(){  
 
-$("#ra").click(function() {
+  $("#rep").click(function() {
 
-    var rmdValue = $("#ra").val();
+    $("#repDiv").html($("#rep").val());
     
-    $("#output").append(rmdValue);
-    
+   })
+
+  $("#ra").click(function() {
+
+    $("#raDiv").html($("#ra").val());
+
+    $('button').removeClass('active');
+    $(this).addClass('active');
+  
+   })
+
+   $("#po").click(function() {
+
+    $("#buttonVal").html($("#po").val());
+   
+   })
+
+   $("#unauth").click(function() {
+
+    $("#unDiv").html($("#unauth").val());
+  
+   })
+
+   $("#toc").click(function() {
+
+    $("#tocDiv").html($("#toc").val());
+   
+   })
+
+   $("#bene").click(function() {
+
+    $("#beneDiv").html($("#bene").val());
+   
+   })
+ 
+  var titleValue = $titleInput.val() + " ";
+  var relationVal = "- " + $relationship.val() + " - ";
+  var thirdVal = $otherVal.val();
+  //var buttonVal = $("#buttonVal").text();
+  //var repVal = $("#repDiv").text();
+  //var raVal = $("#raDiv").text();
+  //var poVal = $("#poDiv").text();
+  //var unVal = $("#unDiv").text();
+  //var tocVal = $("#tocDiv").text();
+  //var beneVal = $("#beneDiv").text();
+  
+  $previewTitle.text(titleValue + relationVal + thirdVal);
+  
+}
+
+//Section 2 Variables & Function
+
+var $titleInputTwo = $("#nameTwo");
+var $relationshipTwo =$("#relationshipTwo");
+var $otherValTwo = $("#otherTwo");
+var $testThisTwo = $("#heyheyTwo");
+var $previewTitleTwo = $("#outputTwo");
+var previewTimerTwo = setInterval(updatePreviewTwo, 1000);
+
+function updatePreviewTwo(){  
+ 
+  var titleValueTwo = $titleInputTwo.val() + " ";
+  var relationValTwo = "- " + $relationshipTwo.val() + " - ";
+  var thirdValTwo = $otherValTwo.val();
+  
+  $previewTitleTwo.text(titleValueTwo + relationValTwo + thirdValTwo);
+  
+}
+
+//Copy One
+
+function copyToClipboard(element) {
+  
+    var $temp = $("<input>");
+    $("#output").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+
+}
+
+$("#clear").click(function() {
+
+    console.log("Hello");
+
+    $("#contractnum").val("");
+    $("#name").val("");
+    $("#relationship").val("");
+    $("#other").val("");
+
 })
+//Copy Two
+
+function copyToClipboardTwo(element) {
+    
+    var $temp = $("<input>");
+    $("#outputTwo").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copyTwo");
+    $temp.remove();
+
+}
+
+//Add function test
+
+$("#add").click(function() {
+
+    $("#change").html(`<p>Hello</p>
+    
+    
+    `);
+   
+   })
+
+
+
+
+
+    //$("#output").append(rmdValue);
+
+
+    //Set the user input as the preview title.
 
 /*
 function returnValue(element) {
@@ -26,51 +143,21 @@ function returnValue(element) {
 }
 */
 
-var $rmdTestVal = $("#rmdTest");
+//var $rmdValue = $("#testing");
 
 // Every second update the preview
-var previewTimer = setInterval(updatePreview, 1000);
+/*
+$('#other').on('keyup', function(){
+    $('#output').html($(this).val());
 
-function updatePreview(){  
-  //Get the user's input
+    console.log(($(this).val()))
 
-  
-  var titleValue = $titleInput.val();
-  //var nextValue = $willWork.val();
+    //$('#output').html($('#core').text());
+});
 
-  var relationVal = " - " + $relationship.val() + " - ";
-  var thirdVal = $otherVal.val();
-  //var tryValue = $rmdValue.val();
-  //var tryVal = $rmdTestVal.val();
+*/
 
-
-  $previewTitle.text(titleValue + relationVal + thirdVal);
-
-    
-}
-
-
-  
-    
-    //$("#output").append(rmdValue);
-
-
-    //Set the user input as the preview title. 
-
-
-function copyToClipboard(element) {
-    //Prepend name value
-    // var name = printName =>
-    // $("#output").prepend($("#name"));
-    //$("#output").append(name);
-    var $temp = $("<input>");
-    $("#output").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
-}
-
-
+//Select the preview h1 tag
 
     /*
     $("#search").keypress(function(e) {
