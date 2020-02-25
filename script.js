@@ -106,15 +106,30 @@ $("#clear").click(function() {
 })
 //Copy Two
 
+
+
+
 function copyToClipboardTwo(element) {
     
-    var $temp = $("<input>");
-    $("#outputTwo").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copyTwo");
-    $temp.remove();
+    var $tempTwo = $("<input>");
+    $("#outputTwo").append($tempTwo);
+    $tempTwo.val($(element).text()).select();
+    document.execCommand("copy");
+    $tempTwo.remove();
 
 }
+
+$("#clearTwo").click(function() {
+
+    console.log("HelloTwo");
+
+    $("#contractnumTwo").val("");
+    $("#nameTwo").val("");
+    $("#relationshipTwo").val("");
+    $("#otherTwo").val("");
+
+
+});
 
 //Add function test
 
