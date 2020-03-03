@@ -1,55 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
 
-    <link rel = "stylesheet" href = "style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
-<body>
-
-    <div class = "container">
-
-        <div class = "row">
-
-            <input type = "text" class = "name" placeholder = "Contract Number" id = "contractnum">
-
+  </head>
+  <body>
+    <div class="container">
+      <div class="row top">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"
+              >Contract Number</span
+            >
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            id="contractnum"
+          />
         </div>
+      </div>
 
-        <div class = "row">
-
-
-                <input type = "text" class = "name" id = "name" placeholder = "Names" value = "">
-
-
-
-                <input type = "text" class = "name" id = "relationship" placeholder = "Relationship" value = "">
-
-
+      <div class="row">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Name & Relationship</span>
+          </div>
+          <input
+            type="text"
+            aria-label="First name"
+            class="form-control"
+            id="name"
+            value=""
+          />
+          <input
+            type="text"
+            aria-label="Last name"
+            class="form-control"
+            id="relationship"
+            value=""
+          />
         </div>
+      </div>
 
-        <div class = "row">
-
-            <input type="text" id= "other" class = "other" value = "">
- 
+      <div class="row top">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" type="button">Notes</span>
+          </div>
+          <textarea
+            class="form-control other"
+            id="other"
+            value=""
+            aria-label="With textarea"
+          ></textarea>
         </div>
+      </div>
 
-        <div class = "row space">
+      <div class="row">
+        <button
+          type="button"
+          class="btn btn-secondary btn-lg btn-block"
+          onclick="copyToClipboard('#output')"
+          id="half"
+        >
+          Copy
+        </button>
+      </div>
 
-            <div id = "output" class = "output"></div>
-              
-            <button class="btn btn-outline-secondary copyThis" type = "button" onclick="copyToClipboard('#output')" id = "copyThis">Copy</button>
-
-            <button class = "btn btn-outline-secondary copyThis" type = "button" id = "clear">Clear</button>
-               
+      <div class="row">
+        <div class="col-sm-4">
+          <button
+            class="btn btn-outline-secondary copyThis"
+            type="button"
+            id="clear"
+          >
+            Clear
+          </button>
         </div>
+        <div class="col-sm-4">
+          <button
+            class="btn btn-outline-secondary copyThis"
+            type="button"
+            id="addTask"
+          >
+            Add Task
+          </button>
+        </div>
+        <div class="col-sm-4">
+          <button
+            class="btn btn-outline-secondary copyThis"
+            id="removeTask"
+            type="button"
+          >
+            Remove Task
+          </button>
+        </div>
+      </div>
 
-        <!--
+      <div class="row array">
+        <div id="printArray"></div>
+      </div>
+
+      <!--
 
         <div class = "row">
 
@@ -67,107 +134,162 @@
         </div> 
 
     -->
-    
-<div class = "row">
 
-    <div id = "repDiv">
+      <div class="row">
+        <div id="repDiv"></div>
 
+        <div id="raDiv"></div>
+
+        <div id="poDiv"></div>
+
+        <div id="unDiv"></div>
+
+        <div id="tocDiv"></div>
+
+        <div id="beneDiv"></div>
+      </div>
+
+      <!--
+
+      <div class="row">
+        <input type="text" class="name" placeholder="Contract Number" />
+      </div>
+
+      <div class="row">
+        <input
+          type="text"
+          class="name"
+          id="nameTwo"
+          placeholder="Names"
+          value=""
+        />
+
+        <input
+          type="text"
+          class="name"
+          id="relationshipTwo"
+          placeholder="Relationship"
+          value=""
+        />
+      </div>
+
+      <div class="row">
+        <input type="text" id="otherTwo" class="other" value="" />
+      </div>
+
+      <div class="row space">
+        <div id="outputTwo" class="output"></div>
+
+        <button
+          class="btn btn-outline-secondary copyThis"
+          type="button"
+          onclick="copyToClipboardTwo('#outputTwo')"
+          id="copyThisTwo"
+        >
+          Copy
+        </button>
+
+        <button
+          class="btn btn-outline-secondary copyThis"
+          type="button"
+          id="clearTwo"
+        >
+          Clear
+        </button>
+      </div>
+
+      <div id="buttonVal" class="row">
+        <div id="repDivTwo"></div>
+
+        <div id="raDivTwo"></div>
+
+        <div id="poDivTwo"></div>
+
+        <div id="unDivTwo"></div>
+
+        <div id="tocDivTwo"></div>
+
+        <div id="beneDiv"></div>
+      </div>
+
+    -->
+
+      <!-- Start section three -->
+
+      <!--
+
+      <div class="row">
+        <input type="text" class="name" placeholder="Contract Number" />
+      </div>
+
+      <div class="row">
+        <input
+          type="text"
+          class="name"
+          id="nameTwo"
+          placeholder="Names"
+          value=""
+        />
+
+        <input
+          type="text"
+          class="name"
+          id="relationshipTwo"
+          placeholder="Relationship"
+          value=""
+        />
+      </div>
+
+      <div class="row">
+        <input type="text" id="otherTwo" class="other" value="" />
+      </div>
+
+      <div class="row space">
+        <div id="outputTwo" class="output"></div>
+
+        <button
+          class="btn btn-outline-secondary copyThis"
+          type="button"
+          onclick="copyToClipboardTwo('#outputTwo')"
+          id="copyThisTwo"
+        >
+          Copy
+        </button>
+
+        <button
+          class="btn btn-outline-secondary copyThis"
+          type="button"
+          id="clearTwo"
+        >
+          Clear
+        </button>
+      </div>
+
+
+      <div class="row">
+        <div id="change">
+          <button class="btn btn-outline-secondary" id="add" type="text">
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="appendHere"></div>
+      </div>
+
+
+
+      
+    -->
+
+      <footer>
+        <div class="row space">
+          <div class="output" id="output"></div>
+        </div>
+      </footer>
     </div>
+  </body>
 
-    <div id = "raDiv">
-
-    </div>
-
-    <div id = "poDiv">
-
-    </div>
-
-    <div id = "unDiv">
-
-    </div>
-
-    <div id = "tocDiv">
-
-    </div>
-
-    <div id = "beneDiv">
-
-    </div>
-
-</div>
-
-<div class = "row">
-
-    <input type = "text" class = "name" placeholder = "Contract Number">
-
-</div>
-
-<div class = "row">
-
-    <input type = "text" class = "name" id = "nameTwo" placeholder = "Names" value = "">
-
-    <input type = "text" class = "name" id = "relationshipTwo" placeholder = "Relationship" value = "">
-
-</div>
-
-
-    <div class = "row">
-
-        <input type="text" id= "otherTwo" class = "other" value = "">
-
-    </div>
-
-    <div class = "row space">
-
-        <div id = "outputTwo" class = "output"></div>
-
-        <button class="btn btn-outline-secondary copyThis" type = "button" onclick="copyToClipboardTwo('#outputTwo')" id = "copyThisTwo">Copy</button>
-          
-        <button class = "btn btn-outline-secondary copyThis" type = "button" id = "clearTwo">Clear</button>
-
-    </div>
-
-<div id = "buttonVal" class = "row">
-
-<div id = "repDivTwo">
-
-</div>
-
-<div id = "raDivTwo">
-
-</div>
-
-<div id = "poDivTwo">
-
-</div>
-
-<div id = "unDivTwo">
-
-</div>
-
-<div id = "tocDivTwo">
-
-</div>
-
-<div id = "beneDiv">
-
-</div>
-
-</div>
-
-<div class = "row">
-
-    <div id = "change">
-
-    <button class="btn btn-outline-secondary" id = "add" type = "text">+</button>
-
-    </div>
-
-</div>
-
-</div>
-    
-</body>
-
-<script src= "script.js"></script>
+  <script src="script.js"></script>
 </html>

@@ -7,47 +7,69 @@ var $testThis = $("#heyhey");
 var $previewTitle = $("#output");
 var previewTimer = setInterval(updatePreview, 1000);
 
-function updatePreview(){  
+var testArray = [];
+var count = 0;
 
+//var deleteThis = $("#delete").click(function() {});
+
+$("#addTask").click(function() {
+  var contractNum = $("#contractnum").val();
+  var nameArrayValue = $("#name").val();
+  var relationArrayValue = $("#relationship").val();
+  var outputArrayVal = $("#other").val();
+  testArray.push(
+    "Task: " +
+      contractNum +
+      " " +
+      nameArrayValue +
+      " " +
+      relationArrayValue +
+      " " +
+      outputArrayVal
+  );
+
+  for (var i = 0; i < testArray.length; i++) {
+    console.log(count++);
+  }
+
+  $("#printArray").html(testArray[0]);
+  //$("#printArray").prepend("<button>Hello</button>");
+  console.log(testArray);
+});
+
+$("#removeTask").click(function() {
+  testArray.shift();
+  $("#printArray").html(testArray);
+});
+
+function updatePreview() {
   $("#rep").click(function() {
-
     $("#repDiv").html($("#rep").val());
-    
-   })
+  });
 
   $("#ra").click(function() {
-
     $("#raDiv").html($("#ra").val());
 
-    $('button').removeClass('active');
-    $(this).addClass('active');
-  
-   })
+    $("button").removeClass("active");
+    $(this).addClass("active");
+  });
 
-   $("#po").click(function() {
-
+  $("#po").click(function() {
     $("#buttonVal").html($("#po").val());
-   
-   })
+  });
 
-   $("#unauth").click(function() {
-
+  $("#unauth").click(function() {
     $("#unDiv").html($("#unauth").val());
-  
-   })
+  });
 
-   $("#toc").click(function() {
-
+  $("#toc").click(function() {
     $("#tocDiv").html($("#toc").val());
-   
-   })
+  });
 
-   $("#bene").click(function() {
-
+  $("#bene").click(function() {
     $("#beneDiv").html($("#bene").val());
-   
-   })
- 
+  });
+
   var titleValue = $titleInput.val() + " ";
   var relationVal = "- " + $relationship.val() + " - ";
   var thirdVal = $otherVal.val();
@@ -58,98 +80,128 @@ function updatePreview(){
   //var unVal = $("#unDiv").text();
   //var tocVal = $("#tocDiv").text();
   //var beneVal = $("#beneDiv").text();
-  
+
   $previewTitle.text(titleValue + relationVal + thirdVal);
-  
 }
 
 //Section 2 Variables & Function
 
 var $titleInputTwo = $("#nameTwo");
-var $relationshipTwo =$("#relationshipTwo");
+var $relationshipTwo = $("#relationshipTwo");
 var $otherValTwo = $("#otherTwo");
 var $testThisTwo = $("#heyheyTwo");
 var $previewTitleTwo = $("#outputTwo");
 var previewTimerTwo = setInterval(updatePreviewTwo, 1000);
 
-function updatePreviewTwo(){  
- 
+function updatePreviewTwo() {
   var titleValueTwo = $titleInputTwo.val() + " ";
   var relationValTwo = "- " + $relationshipTwo.val() + " - ";
   var thirdValTwo = $otherValTwo.val();
-  
+
   $previewTitleTwo.text(titleValueTwo + relationValTwo + thirdValTwo);
-  
 }
 
 //Copy One
 
 function copyToClipboard(element) {
-  
-    var $temp = $("<input>");
-    $("#output").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
+  var $temp = $("<input>");
+  $($previewTitle).append($temp);
+  $temp.val($(element).text()).select();
 
+  document.execCommand("copy");
+  $temp.remove();
 }
 
 $("#clear").click(function() {
+  console.log("Hello");
 
-    console.log("Hello");
-
-    $("#contractnum").val("");
-    $("#name").val("");
-    $("#relationship").val("");
-    $("#other").val("");
-
-})
+  $("#contractnum").val("");
+  $("#name").val("");
+  $("#relationship").val("");
+  $("#other").val("");
+});
 //Copy Two
 
-
-
-
 function copyToClipboardTwo(element) {
-    
-    var $tempTwo = $("<input>");
-    $("#outputTwo").append($tempTwo);
-    $tempTwo.val($(element).text()).select();
-    document.execCommand("copy");
-    $tempTwo.remove();
-
+  var $tempTwo = $("<input>");
+  $("#outputTwo").append($tempTwo);
+  $tempTwo.val($(element).text()).select();
+  document.execCommand("copy");
+  $tempTwo.remove();
 }
 
 $("#clearTwo").click(function() {
+  console.log("HelloTwo");
 
-    console.log("HelloTwo");
-
-    $("#contractnumTwo").val("");
-    $("#nameTwo").val("");
-    $("#relationshipTwo").val("");
-    $("#otherTwo").val("");
-
-
+  $("#contractnumTwo").val("");
+  $("#nameTwo").val("");
+  $("#relationshipTwo").val("");
+  $("#otherTwo").val("");
 });
 
 //Add function test
 
 $("#add").click(function() {
+  $("#appendHere").append(`<div class="container">
+    <div class="row">
+      <input
+        type="text"
+        class="name"
+        placeholder="Contract Number"
+        id="contractnum"
+      />
+    </div>
 
-    $("#change").html(`<p>Hello</p>
+    <div class="row">
+      <input
+        type="text"
+        class="name"
+        id="name"
+        placeholder="Names"
+        value=""
+      />
+
+      <input
+        type="text"
+        class="name"
+        id="relationship"
+        placeholder="Relationship"
+        value=""
+      />
+    </div>
+
+    <div class="row">
+      <input type="text" id="other" class="other" value="" />
+    </div>
+
+    <div class="row space">
+      <div id="output" class="output"></div>
+
+      <button
+        class="btn btn-outline-secondary copyThis"
+        type="button"
+        onclick="copyToClipboard('#output')"
+        id="copyThis"
+      >
+        Copy
+      </button>
+
+      <button
+        class="btn btn-outline-secondary copyThis"
+        type="button"
+        id="clear"
+      >
+        Clear
+      </button>
+    </div>
     
     
     `);
-   
-   })
+});
 
+//$("#output").append(rmdValue);
 
-
-
-
-    //$("#output").append(rmdValue);
-
-
-    //Set the user input as the preview title.
+//Set the user input as the preview title.
 
 /*
 function returnValue(element) {
@@ -174,14 +226,13 @@ $('#other').on('keyup', function(){
 
 //Select the preview h1 tag
 
-    /*
+/*
     $("#search").keypress(function(e) {
         if(e.which == 13){
             $(".button").click()
         };
     });
     */
-
 
 /*
 
@@ -206,7 +257,6 @@ $('#output').html($('#nameTest').text());
 
 });
 */
-
 
 //console.log(pleaseWork);
 
@@ -279,145 +329,85 @@ $("#copyThis").keypress(function(e) {
 
 */
 
-
-
 $(document).ready(function() {
+  $("#interest").click(function() {
+    var getOne = parseInt($("#numone").val(), 10);
+    //console.log(getOne);
+    var getTwo = parseInt($("#numtwo").val(), 10);
+    var years = parseInt($("#years").val(), 10);
+    var answer = (((getTwo - getOne) / getOne / years) * 100).toFixed(2) + "%";
+    //$()
 
-    
+    $("#result").html(answer);
+  });
 
+  // Function for PHJ
 
-    $("#interest").click(function() {
+  //Input to type name
 
-        var getOne = parseInt($("#numone").val(),10);
-        //console.log(getOne);
-        var getTwo = parseInt($("#numtwo").val(),10);
-        var years = parseInt($("#years").val(),10);
-        var answer = ((((( getTwo - getOne ) / getOne)/ years)*100).toFixed(2)) + "%";
-        //$()
+  //Click relationship
 
-        $("#result").html(answer)
-    });
+  //Click button for each set of words with comma at the end
 
-    // Function for PHJ
+  $("#po").click(function() {
+    var rmdValue = $("#po").val();
 
-    //Input to type name
+    $("#output").append(rmdValue);
+  });
 
-    //Click relationship
+  $("#sa").click(function() {
+    var rmdValue = $("#sa").val();
 
-    //Click button for each set of words with comma at the end
+    $("#output").append(rmdValue);
+  });
 
-    
+  $("#toc").click(function() {
+    var rmdValue = $("#toc").val();
 
-    
+    $("#output").append(rmdValue);
+  });
 
-    $("#po").click(function() {
+  $("#rmd").click(function() {
+    var rmdValue = $("#rmd").val();
 
-        var rmdValue = $("#po").val();
-        
-        $("#output").append(rmdValue);
-        
-    })
+    $("#output").append(rmdValue);
+  });
 
-    $("#sa").click(function() {
+  $("#ben").click(function() {
+    var benValue = $("#ben").val();
+    $("#output").append(benValue);
+  });
 
-        var rmdValue = $("#sa").val();
-        
-        $("#output").append(rmdValue);
-        
-    })
+  $("#xfer").click(function() {
+    var xferValue = $("#xfer").val();
+    $("#output").append(xferValue);
+  });
 
-    $("#toc").click(function() {
+  $("#sur").click(function() {
+    var surValue = $("#sur").val();
+    $("#output").append(surValue);
+  });
 
-        var rmdValue = $("#toc").val();
-        
-        $("#output").append(rmdValue);
-        
-    })
-    
-    
-    
-    $("#rmd").click(function() {
+  //When clicked, append each item to output - realtime so shows output as clicked
 
-        var rmdValue = $("#rmd").val();
-        
-        $("#output").append(rmdValue);
-        
-    })
+  //When "copy" is clicked, output copied
 
-    $("#ben").click(function() {
+  $("#thisButton").click(function() {
+    var getNum = $("#number").val();
+    var nowNum = parseInt(getNum);
+    // console.log(nowNum);
 
-        var benValue = $("#ben").val();
-        $("#output").append(benValue);
+    var value = $("#todayTwo").attr("value");
+    // console.log(value);
+    var isNumber = parseInt(value);
+    //console.log(isNumber + 2);
 
-    })
+    hello = "";
 
-    $("#xfer").click(function() {
+    hello += nowNum - isNumber;
 
-        var xferValue = $("#xfer").val();
-        $("#output").append(xferValue);
+    console.log(hello);
 
-    })
-
-    $("#sur").click(function() {
-
-        var surValue= $("#sur").val();
-        $("#output").append(surValue);
-
-    })
-
-
-
-    //When clicked, append each item to output - realtime so shows output as clicked
-
-    //When "copy" is clicked, output copied
-
-    
-    
-    
-   
-
-
-
-
-
-
-    $("#thisButton").click(function() {
-
-        var getNum = $("#number").val();
-        var nowNum = parseInt(getNum);
-       // console.log(nowNum);
-
-        var value = $("#todayTwo").attr('value');
-       // console.log(value);
-        var isNumber = parseInt(value);
-        //console.log(isNumber + 2);
-
-        hello = "";
-    
-        
-        hello += (nowNum - isNumber);
-    
-        console.log(hello);
-
-        $("#result").html(hello);
-
-
-
-
-
-    })
-
-       
-
-    });
-
-   
-
-
-
-
-
-
-
-
-
+    $("#result").html(hello);
+  });
+});

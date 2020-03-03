@@ -1,65 +1,75 @@
-
 .here {
-    width: 100px;
-    height: 40px;
+  width: 100px;
+  height: 40px;
 }
 
 #box {
-    width: 100px;
-    height: 100px;
-    background-color: red;
+  width: 100px;
+  height: 100px;
+  background-color: red;
 }
 
 #result {
-    font-size: 18px;
+  font-size: 18px;
 }
 
+.top {
+  margin-top: 15px;
+}
 .name {
-    height: 40px;
-    margin: 10px;
-    width: 40%;
+  height: 40px;
+  margin: 10px;
+  width: 40%;
 }
 
 .output {
-    height: 50px;
-    background-color: lightblue;
-    border: 1px solid darkblue;
-    width: 80%;
+  height: 50px;
+
+  width: 100%;
+  color: #ced4da;
+  padding-top: 100px;
 }
 
 #core {
-    height: 50px;
+  height: 50px;
 }
 
 .other {
-    width: 80%;
-    height: 80px;
+  width: 80%;
+  height: 80px;
 }
 
 .btn {
-    margin: 10px;
-    
+  margin: 10px;
 }
 
 #add {
-    width: 15%;
+  width: 15%;
 }
 
 .copyThis {
-    width: 15%;
+  width: 100%;
 }
 
 .space {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 .test {
-    background-color: lightsalmon;
-    border: 1px solid red;
-    height: 50px;
+  background-color: lightsalmon;
+  border: 1px solid red;
+  height: 50px;
 }
 
 .active {
-    color: hotpink;
-    background-color: yellowgreen;
+  color: hotpink;
+  background-color: yellowgreen;
+}
+
+.array {
+  height: 100px;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  width: 100%;
+  color: #495057;
 }
