@@ -6,67 +6,101 @@ var $otherVal = $("#other");
 var $testThis = $("#heyhey");
 var $previewTitle = $("#output");
 var previewTimer = setInterval(updatePreview, 1000);
+var taskDisplay = $("#printArray");
 
-var testArray = [];
+// var testArray = [];
 var count = 0;
+var i;
+var taskArray = [];
 
 //var deleteThis = $("#delete").click(function() {});
 
-$("#addTask").click(function() {
-  var contractNum = $("#contractnum").val();
-  var nameArrayValue = $("#name").val();
-  var relationArrayValue = $("#relationship").val();
-  var outputArrayVal = $("#other").val();
-  testArray.push(
-    "Task: " +
+$("#addTask").click(function () {
+  var contractNum =
+    $("#contractnum").val() +
+    " " +
+    $("#name").val() +
+    " " +
+    $("#relationship").val() +
+    " " +
+    $("#other").val();
+  // var nameArrayValue = $("#name").val();
+  // var relationArrayValue = $("#relationship").val();
+  // var outputArrayVal = $("#other").val();
+
+  // taskArray.push(contractNum);
+  // testArray.push(
+  //   "Task: " +
+  //     contractNum +
+  //     " " +
+  //     nameArrayValue +
+  //     " " +
+  //     relationArrayValue +
+  //     " " +
+  //     outputArrayVal +
+  //     "<button value = '' id = 'removeTaskTest' type = 'button'>Remove Task</button></br>"
+  // );
+
+  // for (var i = 0; i < testArray.length; i++) {
+  //   console.log(testArray);
+  //   $("#printArray").append(testArray[i]);
+  // }
+
+  taskDisplay.append(
+    "<p>" +
       contractNum +
-      " " +
-      nameArrayValue +
-      " " +
-      relationArrayValue +
-      " " +
-      outputArrayVal
+      '<button value = "' +
+      contractNum +
+      '" type = button" class = "btn btn-outline-secondary del-btn">Remove Task</button>'
   );
-
-  for (var i = 0; i < testArray.length; i++) {
-    console.log(count++);
-  }
-
-  $("#printArray").html(testArray[0]);
   //$("#printArray").prepend("<button>Hello</button>");
-  console.log(testArray);
+  // console.log(testArray);
+
+  // $("#removeTaskTest").click(function () {
+  //   alert("You clicked this!");
+  // });
+
+  // $("#removeTaskTest").click(function () {
+  //   testArray.shift();
+  //   $("#printArray").html(testArray);
+  // });
 });
 
-$("#removeTask").click(function() {
-  testArray.shift();
-  $("#printArray").html(testArray);
+taskDisplay.on("click", ".del-btn", function () {
+  taskArray.splice(taskArray.indexOf($(this).val()), 1);
+  $(this).parent().remove();
 });
+
+// $("#removeTask").click(function () {
+//   testArray.shift();
+//   $("#printArray").html(testArray);
+// });
 
 function updatePreview() {
-  $("#rep").click(function() {
+  $("#rep").click(function () {
     $("#repDiv").html($("#rep").val());
   });
 
-  $("#ra").click(function() {
+  $("#ra").click(function () {
     $("#raDiv").html($("#ra").val());
 
     $("button").removeClass("active");
     $(this).addClass("active");
   });
 
-  $("#po").click(function() {
+  $("#po").click(function () {
     $("#buttonVal").html($("#po").val());
   });
 
-  $("#unauth").click(function() {
+  $("#unauth").click(function () {
     $("#unDiv").html($("#unauth").val());
   });
 
-  $("#toc").click(function() {
+  $("#toc").click(function () {
     $("#tocDiv").html($("#toc").val());
   });
 
-  $("#bene").click(function() {
+  $("#bene").click(function () {
     $("#beneDiv").html($("#bene").val());
   });
 
@@ -112,7 +146,7 @@ function copyToClipboard(element) {
   $temp.remove();
 }
 
-$("#clear").click(function() {
+$("#clear").click(function () {
   console.log("Hello");
 
   $("#contractnum").val("");
@@ -130,7 +164,7 @@ function copyToClipboardTwo(element) {
   $tempTwo.remove();
 }
 
-$("#clearTwo").click(function() {
+$("#clearTwo").click(function () {
   console.log("HelloTwo");
 
   $("#contractnumTwo").val("");
@@ -141,7 +175,7 @@ $("#clearTwo").click(function() {
 
 //Add function test
 
-$("#add").click(function() {
+$("#add").click(function () {
   $("#appendHere").append(`<div class="container">
     <div class="row">
       <input
@@ -329,8 +363,8 @@ $("#copyThis").keypress(function(e) {
 
 */
 
-$(document).ready(function() {
-  $("#interest").click(function() {
+$(document).ready(function () {
+  $("#interest").click(function () {
     var getOne = parseInt($("#numone").val(), 10);
     //console.log(getOne);
     var getTwo = parseInt($("#numtwo").val(), 10);
@@ -349,41 +383,41 @@ $(document).ready(function() {
 
   //Click button for each set of words with comma at the end
 
-  $("#po").click(function() {
+  $("#po").click(function () {
     var rmdValue = $("#po").val();
 
     $("#output").append(rmdValue);
   });
 
-  $("#sa").click(function() {
+  $("#sa").click(function () {
     var rmdValue = $("#sa").val();
 
     $("#output").append(rmdValue);
   });
 
-  $("#toc").click(function() {
+  $("#toc").click(function () {
     var rmdValue = $("#toc").val();
 
     $("#output").append(rmdValue);
   });
 
-  $("#rmd").click(function() {
+  $("#rmd").click(function () {
     var rmdValue = $("#rmd").val();
 
     $("#output").append(rmdValue);
   });
 
-  $("#ben").click(function() {
+  $("#ben").click(function () {
     var benValue = $("#ben").val();
     $("#output").append(benValue);
   });
 
-  $("#xfer").click(function() {
+  $("#xfer").click(function () {
     var xferValue = $("#xfer").val();
     $("#output").append(xferValue);
   });
 
-  $("#sur").click(function() {
+  $("#sur").click(function () {
     var surValue = $("#sur").val();
     $("#output").append(surValue);
   });
@@ -392,7 +426,7 @@ $(document).ready(function() {
 
   //When "copy" is clicked, output copied
 
-  $("#thisButton").click(function() {
+  $("#thisButton").click(function () {
     var getNum = $("#number").val();
     var nowNum = parseInt(getNum);
     // console.log(nowNum);
