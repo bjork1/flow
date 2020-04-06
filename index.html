@@ -72,27 +72,29 @@
       </div>
 
       <div class="row">
-        <button
-          type="button"
-          class="btn btn-secondary btn-lg btn-block"
-          onclick="copyToClipboard('#output')"
-          id="half"
-        >
-          Copy
-        </button>
-      </div>
-
-      <div class="row">
         <div class="col-sm-6">
           <button
-            class="btn btn-outline-secondary copyThis"
+            type="button"
+            class="btn btn-primary btn-lg btn-block"
+            onclick="copyToClipboard('#output')"
+            id="half"
+          >
+            Copy
+          </button>
+        </div>
+        <!-- </div>
+
+      <div class="row"> -->
+        <div class="col-sm-6">
+          <button
+            class="btn btn-danger btn-lg btn-block"
             type="button"
             id="clear"
           >
             Clear
           </button>
         </div>
-        <div class="col-sm-6">
+        <!-- <div class="col-sm-6">
           <button
             class="btn btn-outline-secondary copyThis"
             type="button"
@@ -100,7 +102,7 @@
           >
             Add Task
           </button>
-        </div>
+        </div> -->
         <!-- <div class="col-sm-4">
           <button
             class="btn btn-outline-secondary copyThis"
@@ -110,6 +112,25 @@
             Remove Task
           </button>
         </div> -->
+      </div>
+
+      <div class="row top">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span
+              class="input-group-text"
+              type="button"
+              id="hello"
+              >Add task</span
+            >
+          </div>
+          <textarea
+            class="form-control other"
+            id="add"
+            value=""
+            aria-label="With textarea"
+          ></textarea>
+        </div>
       </div>
 
       <div class="row array">

@@ -15,15 +15,17 @@ var taskArray = [];
 
 //var deleteThis = $("#delete").click(function() {});
 
-$("#addTask").click(function () {
+$("#hello").click(function () {
   var contractNum =
     $("#contractnum").val() +
-    " " +
+    " - " +
     $("#name").val() +
-    " " +
+    " - " +
     $("#relationship").val() +
-    " " +
-    $("#other").val();
+    " - " +
+    $("#other").val() +
+    " - " +
+    $("#add").val();
   // var nameArrayValue = $("#name").val();
   // var relationArrayValue = $("#relationship").val();
   // var outputArrayVal = $("#other").val();
