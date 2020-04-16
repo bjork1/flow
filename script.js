@@ -26,6 +26,7 @@ $("#hello").click(function () {
     $("#other").val() +
     "</br>" +
     $("#add").val();
+
   // var nameArrayValue = $("#name").val();
   // var relationArrayValue = $("#relationship").val();
   // var outputArrayVal = $("#other").val();
@@ -55,6 +56,8 @@ $("#hello").click(function () {
       contractNum +
       '" type = button" class = "btn btn-outline-secondary del-btn">Remove Task</button>'
   );
+
+  $("#add").val("");
 
   //$("#printArray").prepend("<button>Hello</button>");
   // console.log(testArray);
