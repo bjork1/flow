@@ -43,175 +43,204 @@
   </nav>
   <body>
     <div class="container">
-      <div class="row top">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"
-              >Contract Number</span
-            >
+      <div class = "row">
+
+        <div class = "col-lg-4">
+
+          <div class = "row">
+            <h1>
+              Tasks
+            </h1>
           </div>
-          <input
-            type="text"
-            class="form-control"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            id="contractnum"
-          />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">Name & Relationship</span>
+          
+          <div class="row array">
+            <div id="printArray"></div>
           </div>
-          <input
-            type="text"
-            aria-label="First name"
-            class="form-control"
-            id="name"
-            value=""
-          />
-          <input
-            type="text"
-            aria-label="Last name"
-            class="form-control"
-            id="relationship"
-            value=""
-          />
-        </div>
-      </div>
 
-      <div class="row top">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" type="button">Notes</span>
+
+
+        </div>
+
+        <div class = "col-lg-8">
+          <div class="row top">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  >Contract Number</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                id="contractnum"
+              />
+            </div>
           </div>
-          <textarea
-            class="form-control other"
-            id="other"
-            value=""
-            aria-label="With textarea"
-          ></textarea>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- <div class="col-sm-6">
-          <button
-            type="button"
-            class="btn btn-primary btn-lg btn-block"
-            onclick="copyToClipboard('#output')"
-            id="half"
-          >
-            Copy
-          </button>
-        </div> -->
-        <!-- </div>
-
-      <div class="row"> -->
-        <!-- <div class="col-sm-6">
-          <button
-            class="btn btn-danger btn-lg btn-block"
-            type="button"
-            id="clear"
-          >
-            Clear
-          </button>
-        </div> -->
-        <!-- <div class="col-sm-6">
-          <button
-            class="btn btn-outline-secondary copyThis"
-            type="button"
-            id="addTask"
-          >
-            Add Task
-          </button>
-        </div> -->
-        <!-- <div class="col-sm-4">
-          <button
-            class="btn btn-outline-secondary copyThis"
-            id="removeTask"
-            type="button"
-          >
-            Remove Task
-          </button>
-        </div> -->
-      </div>
-
-      <div class="row top">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" type="button" id="hello"
-              >Add task</span
-            >
+    
+          <div class="row">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Name & Relationship</span>
+              </div>
+              <input
+                type="text"
+                aria-label="First name"
+                class="form-control"
+                id="name"
+                value=""
+              />
+              <input
+                type="text"
+                aria-label="Last name"
+                class="form-control"
+                id="relationship"
+                value=""
+              />
+            </div>
           </div>
-          <textarea
-            class="form-control other"
-            id="add"
-            value=""
-            aria-label="With textarea"
-          ></textarea>
-        </div>
-      </div>
-
-      <!-- <div class="row">
-        <div class="card" style="width: 100rem;">
-          <ul class="list-group list-group-flush"> -->
-      <!-- <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li> -->
-      <!-- </ul>
-        </div>
-      </div> -->
-
-      <!-- <div class="row" id="here"> -->
-      <!-- <div class="card">
-          <h5 class="card-header">Featured</h5>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+    
+          <div class="row top">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" type="button">Notes</span>
+              </div>
+              <textarea
+                class="form-control other"
+                id="other"
+                value=""
+                aria-label="With textarea"
+              ></textarea>
+            </div>
           </div>
-        </div> -->
-      <!-- </div> -->
+    
+          <div class="row">
+            <!-- <div class="col-sm-6">
+              <button
+                type="button"
+                class="btn btn-primary btn-lg btn-block"
+                onclick="copyToClipboard('#output')"
+                id="half"
+              >
+                Copy
+              </button>
+            </div> -->
+            <!-- </div>
+    
+          <div class="row"> -->
+            <!-- <div class="col-sm-6">
+              <button
+                class="btn btn-danger btn-lg btn-block"
+                type="button"
+                id="clear"
+              >
+                Clear
+              </button>
+            </div> -->
+            <!-- <div class="col-sm-6">
+              <button
+                class="btn btn-outline-secondary copyThis"
+                type="button"
+                id="addTask"
+              >
+                Add Task
+              </button>
+            </div> -->
+            <!-- <div class="col-sm-4">
+              <button
+                class="btn btn-outline-secondary copyThis"
+                id="removeTask"
+                type="button"
+              >
+                Remove Task
+              </button>
+            </div> -->
+          </div>
+    
+          <div class="row top">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" type="button" id="hello"
+                  >Add task</span
+                >
+              </div>
+              <textarea
+                class="form-control other"
+                id="add"
+                value=""
+                aria-label="With textarea"
+              ></textarea>
+            </div>
+          </div>
+    
+          <!-- <div class="row">
+            <div class="card" style="width: 100rem;">
+              <ul class="list-group list-group-flush"> -->
+          <!-- <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li> -->
+          <!-- </ul>
+            </div>
+          </div> -->
+    
+          <!-- <div class="row" id="here"> -->
+          <!-- <div class="card">
+              <h5 class="card-header">Featured</h5>
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div> -->
+          <!-- </div> -->
+    
+          <div class="row array">
+            <div id="printArray"></div>
+          </div>
+    
+          <!--
+    
+            <div class = "row">
+    
+                
+    
+    
+                
+                <button class="btn btn-outline-secondary" id = "rep" type = "text" value = " - rep - ">Rep</button>
+                <button class="btn btn-outline-secondary" id = "ra" type = "text" value = " - RA - ">RA</button>
+                <button class="btn btn-outline-secondary" id = "po" type = "text" value = " - PO - ">PO</button>
+                <button class="btn btn-outline-secondary" id = "unauth" type = "text" value = " - unauth - ">Unauth</button>
+                <button class="btn btn-outline-secondary" id = "toc" type = "text" value = " - TOC - ">TOC</button>
+                <button class="btn btn-outline-secondary" id = "bene" type = "text" value = " - beneficiary - ">bene</button>
+    
+            </div> 
+    
+        -->
+    
+          <div class="row">
+            <div id="repDiv"></div>
+    
+            <div id="raDiv"></div>
+    
+            <div id="poDiv"></div>
+    
+            <div id="unDiv"></div>
+    
+            <div id="tocDiv"></div>
+    
+            <div id="beneDiv"></div>
+          </div>
 
-      <div class="row array">
-        <div id="printArray"></div>
+        </div>
+
+
+
+
       </div>
 
-      <!--
 
-        <div class = "row">
-
-            
-
-
-            
-            <button class="btn btn-outline-secondary" id = "rep" type = "text" value = " - rep - ">Rep</button>
-            <button class="btn btn-outline-secondary" id = "ra" type = "text" value = " - RA - ">RA</button>
-            <button class="btn btn-outline-secondary" id = "po" type = "text" value = " - PO - ">PO</button>
-            <button class="btn btn-outline-secondary" id = "unauth" type = "text" value = " - unauth - ">Unauth</button>
-            <button class="btn btn-outline-secondary" id = "toc" type = "text" value = " - TOC - ">TOC</button>
-            <button class="btn btn-outline-secondary" id = "bene" type = "text" value = " - beneficiary - ">bene</button>
-
-        </div> 
-
-    -->
-
-      <div class="row">
-        <div id="repDiv"></div>
-
-        <div id="raDiv"></div>
-
-        <div id="poDiv"></div>
-
-        <div id="unDiv"></div>
-
-        <div id="tocDiv"></div>
-
-        <div id="beneDiv"></div>
-      </div>
+    
 
       <!--
 
