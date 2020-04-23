@@ -16,6 +16,31 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
+  <nav class="navbar navbar-dark bg-dark">
+    <form class="form-inline">
+      <button
+        onclick="copyToClipboard('#output')"
+        id="half"
+        class="btn btn-outline-success"
+        type="button"
+      >
+        Copy
+      </button>
+      <!-- <button class="btn btn-outline-secondary" type="button" id="clear">
+        Add Task
+      </button> -->
+    </form>
+    <form class="form-inline my-2 my-lg-0">
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        type="button"
+        id="clear"
+      >
+        Clear
+      </button>
+    </form>
+  </nav>
   <body>
     <div class="container">
       <div class="row top">
@@ -72,7 +97,7 @@
       </div>
 
       <div class="row">
-        <div class="col-sm-6">
+        <!-- <div class="col-sm-6">
           <button
             type="button"
             class="btn btn-primary btn-lg btn-block"
@@ -81,11 +106,11 @@
           >
             Copy
           </button>
-        </div>
+        </div> -->
         <!-- </div>
 
       <div class="row"> -->
-        <div class="col-sm-6">
+        <!-- <div class="col-sm-6">
           <button
             class="btn btn-danger btn-lg btn-block"
             type="button"
@@ -93,7 +118,7 @@
           >
             Clear
           </button>
-        </div>
+        </div> -->
         <!-- <div class="col-sm-6">
           <button
             class="btn btn-outline-secondary copyThis"
