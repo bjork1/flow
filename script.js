@@ -16,16 +16,20 @@ var taskArray = [];
 //var deleteThis = $("#delete").click(function() {});
 
 $("#hello").click(function () {
-  var contractNum =
-    $("#contractnum").val() +
-    " - " +
-    $("#name").val() +
-    " - " +
-    $("#relationship").val() +
-    " - " +
-    $("#other").val() +
-    "</br>" +
-    $("#add").val();
+  var contractNum = $("#contractnum").val();
+  var nameVal = $("#name").val() + " - " + $("#relationship").val();
+  var infoVal = $("#other").val() + ", " + $("#add").val();
+
+  // var contractNum =
+  //   $("#contractnum").val() +
+  //   " - " +
+  //   $("#name").val() +
+  //   " - " +
+  //   $("#relationship").val() +
+  //   " - " +
+  //   $("#other").val() +
+  //   "</br>" +
+  //   $("#add").val();
 
   // var nameArrayValue = $("#name").val();
   // var relationArrayValue = $("#relationship").val();
@@ -50,12 +54,38 @@ $("#hello").click(function () {
   // }
 
   taskDisplay.append(
-    "<p>" +
+    `
+    
+    <div class = "card">
+    <div class="card-body">
+      <h5 class="card-title">` +
       contractNum +
-      '<button value = "' +
+      " - " +
+      nameVal +
+      `</h5>
+      <p class="card-text">` +
+      infoVal +
+      `</p><button value = "` +
       contractNum +
-      '" type = button" class = "btn btn-outline-secondary del-btn">Remove Task</button>'
+      `" type = 'button' class = 'btn btn-outline-secondary del-btn'>Remove Task</button>
+
+    </div>
+    </div>
+  
+    
+    `
+
+    // "<li class = 'list-group-item'>" + contractNum + "<button value = '" +
+    //   contractNum +
+    //   "' type = 'button' class = 'btn btn-outline-secondary del-btn'>Remove Task</button></li>"
   );
+
+  //   "<p>" +
+  //     contractNum +
+  //     '<button value = "' +
+  //     contractNum +
+  //     '" type = button" class = "btn btn-outline-secondary del-btn">Remove Task</button>'
+  // );
 
   $("#add").val("");
 
@@ -73,8 +103,10 @@ $("#hello").click(function () {
 });
 
 taskDisplay.on("click", ".del-btn", function () {
+  // $("#five").remove();
+
   taskArray.splice(taskArray.indexOf($(this).val()), 1);
-  $(this).parent().remove();
+  $(this).parent().parent().remove();
 });
 
 // $("#removeTask").click(function () {
