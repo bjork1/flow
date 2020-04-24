@@ -16,370 +16,139 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
-  <nav class="navbar navbar-dark bg-dark">
+  <nav class="navbar navbar-dark bg-dark" id="margin">
     <form class="form-inline">
       <button
         onclick="copyToClipboard('#output')"
         id="half"
-        class="btn btn-outline-success"
+        class="btn btn-primary"
         type="button"
       >
         Copy
       </button>
-      <!-- <button class="btn btn-outline-secondary" type="button" id="clear">
+      <button type="button" id="hello" class="btn btn-success">
         Add Task
-      </button> -->
+      </button>
     </form>
     <form class="form-inline my-2 my-lg-0">
-      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-      <button
-        class="btn btn-outline-success my-2 my-sm-0"
-        type="button"
-        id="clear"
-      >
+      <button class="btn btn-danger my-2 my-sm-0" type="button" id="clear">
         Clear
       </button>
     </form>
   </nav>
-  <body>
+  <body style="background-color: azure;">
     <div class="container">
-      <div class = "row">
-
-        <div class = "col-lg-4">
-
-          <div class = "row">
-            <h1>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row">
+            <form>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Call Information</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contractnum"
+                  placeholder="Contract Number"
+                />
+              </div>
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    value=""
+                    placeholder="First name"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Relationship"
+                    id="relationship"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="other">Notes</label>
+                <textarea
+                  class="form-control other"
+                  id="other"
+                  value=""
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="add">Task Notes</label>
+                <textarea
+                  class="form-control other"
+                  id="add"
+                  value=""
+                  rows="3"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+          <div class="row">
+            <div class="list-group" id="printArray">
+              <a
+                href="#"
+                class="list-group-item list-group-item-action active"
+                id="minWidth"
+              >
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1" >Task Flow</h5>
+                </div>
+              </a>
+              <!-- <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">List group item heading</h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">
+                  Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                  diam eget risus varius blandit.
+                </p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">List group item heading</h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">
+                  Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                  diam eget risus varius blandit.
+                </p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+                <button value="" type="button" class="btn btn-warning del-btn">
+                  Complete
+                </button>
+              </a> -->
+            </div>
+            <!-- <div>
               Tasks
-            </h1>
+            </div> -->
           </div>
-          
-          <div class="row array">
+
+          <!-- <div class="row array">
             <div id="printArray"></div>
-          </div>
-
-
-
-        </div>
-
-        <div class = "col-lg-8">
-          <div class="row top">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"
-                  >Contract Number</span
-                >
-              </div>
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Username"
-                aria-describedby="basic-addon1"
-                id="contractnum"
-              />
-            </div>
-          </div>
-    
-          <div class="row">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Name & Relationship</span>
-              </div>
-              <input
-                type="text"
-                aria-label="First name"
-                class="form-control"
-                id="name"
-                value=""
-              />
-              <input
-                type="text"
-                aria-label="Last name"
-                class="form-control"
-                id="relationship"
-                value=""
-              />
-            </div>
-          </div>
-    
-          <div class="row top">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" type="button">Notes</span>
-              </div>
-              <textarea
-                class="form-control other"
-                id="other"
-                value=""
-                aria-label="With textarea"
-              ></textarea>
-            </div>
-          </div>
-    
-          <div class="row">
-            <!-- <div class="col-sm-6">
-              <button
-                type="button"
-                class="btn btn-primary btn-lg btn-block"
-                onclick="copyToClipboard('#output')"
-                id="half"
-              >
-                Copy
-              </button>
-            </div> -->
-            <!-- </div>
-    
-          <div class="row"> -->
-            <!-- <div class="col-sm-6">
-              <button
-                class="btn btn-danger btn-lg btn-block"
-                type="button"
-                id="clear"
-              >
-                Clear
-              </button>
-            </div> -->
-            <!-- <div class="col-sm-6">
-              <button
-                class="btn btn-outline-secondary copyThis"
-                type="button"
-                id="addTask"
-              >
-                Add Task
-              </button>
-            </div> -->
-            <!-- <div class="col-sm-4">
-              <button
-                class="btn btn-outline-secondary copyThis"
-                id="removeTask"
-                type="button"
-              >
-                Remove Task
-              </button>
-            </div> -->
-          </div>
-    
-          <div class="row top">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" type="button" id="hello"
-                  >Add task</span
-                >
-              </div>
-              <textarea
-                class="form-control other"
-                id="add"
-                value=""
-                aria-label="With textarea"
-              ></textarea>
-            </div>
-          </div>
-    
-          <!-- <div class="row">
-            <div class="card" style="width: 100rem;">
-              <ul class="list-group list-group-flush"> -->
-          <!-- <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li> -->
-          <!-- </ul>
-            </div>
           </div> -->
-    
-          <!-- <div class="row" id="here"> -->
-          <!-- <div class="card">
-              <h5 class="card-header">Featured</h5>
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div> -->
-          <!-- </div> -->
-    
-          <div class="row array">
-            <div id="printArray"></div>
-          </div>
-    
-          <!--
-    
-            <div class = "row">
-    
-                
-    
-    
-                
-                <button class="btn btn-outline-secondary" id = "rep" type = "text" value = " - rep - ">Rep</button>
-                <button class="btn btn-outline-secondary" id = "ra" type = "text" value = " - RA - ">RA</button>
-                <button class="btn btn-outline-secondary" id = "po" type = "text" value = " - PO - ">PO</button>
-                <button class="btn btn-outline-secondary" id = "unauth" type = "text" value = " - unauth - ">Unauth</button>
-                <button class="btn btn-outline-secondary" id = "toc" type = "text" value = " - TOC - ">TOC</button>
-                <button class="btn btn-outline-secondary" id = "bene" type = "text" value = " - beneficiary - ">bene</button>
-    
-            </div> 
-    
-        -->
-    
-          <div class="row">
-            <div id="repDiv"></div>
-    
-            <div id="raDiv"></div>
-    
-            <div id="poDiv"></div>
-    
-            <div id="unDiv"></div>
-    
-            <div id="tocDiv"></div>
-    
-            <div id="beneDiv"></div>
-          </div>
-
-        </div>
-
-
-
-
-      </div>
-
-
-    
-
-      <!--
-
-      <div class="row">
-        <input type="text" class="name" placeholder="Contract Number" />
-      </div>
-
-      <div class="row">
-        <input
-          type="text"
-          class="name"
-          id="nameTwo"
-          placeholder="Names"
-          value=""
-        />
-
-        <input
-          type="text"
-          class="name"
-          id="relationshipTwo"
-          placeholder="Relationship"
-          value=""
-        />
-      </div>
-
-      <div class="row">
-        <input type="text" id="otherTwo" class="other" value="" />
-      </div>
-
-      <div class="row space">
-        <div id="outputTwo" class="output"></div>
-
-        <button
-          class="btn btn-outline-secondary copyThis"
-          type="button"
-          onclick="copyToClipboardTwo('#outputTwo')"
-          id="copyThisTwo"
-        >
-          Copy
-        </button>
-
-        <button
-          class="btn btn-outline-secondary copyThis"
-          type="button"
-          id="clearTwo"
-        >
-          Clear
-        </button>
-      </div>
-
-      <div id="buttonVal" class="row">
-        <div id="repDivTwo"></div>
-
-        <div id="raDivTwo"></div>
-
-        <div id="poDivTwo"></div>
-
-        <div id="unDivTwo"></div>
-
-        <div id="tocDivTwo"></div>
-
-        <div id="beneDiv"></div>
-      </div>
-
-    -->
-
-      <!-- Start section three -->
-
-      <!--
-
-      <div class="row">
-        <input type="text" class="name" placeholder="Contract Number" />
-      </div>
-
-      <div class="row">
-        <input
-          type="text"
-          class="name"
-          id="nameTwo"
-          placeholder="Names"
-          value=""
-        />
-
-        <input
-          type="text"
-          class="name"
-          id="relationshipTwo"
-          placeholder="Relationship"
-          value=""
-        />
-      </div>
-
-      <div class="row">
-        <input type="text" id="otherTwo" class="other" value="" />
-      </div>
-
-      <div class="row space">
-        <div id="outputTwo" class="output"></div>
-
-        <button
-          class="btn btn-outline-secondary copyThis"
-          type="button"
-          onclick="copyToClipboardTwo('#outputTwo')"
-          id="copyThisTwo"
-        >
-          Copy
-        </button>
-
-        <button
-          class="btn btn-outline-secondary copyThis"
-          type="button"
-          id="clearTwo"
-        >
-          Clear
-        </button>
-      </div>
-
-
-      <div class="row">
-        <div id="change">
-          <button class="btn btn-outline-secondary" id="add" type="text">
-            +
-          </button>
         </div>
       </div>
-
-      <div class="row">
-        <div id="appendHere"></div>
-      </div>
-
-
-
-      
-    -->
 
       <footer>
         <div class="row space">
           <div class="output" id="output"></div>
         </div>
+        <!-- <div class="row space">
+          <div class="output" id="helloValue">Hello</div>
+        </div> -->
       </footer>
     </div>
   </body>

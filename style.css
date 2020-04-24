@@ -2,7 +2,9 @@
   width: 100px;
   height: 40px;
 }
-
+#margin {
+  margin-bottom: 15px;
+}
 #box {
   width: 100px;
   height: 100px;
@@ -34,18 +36,18 @@
   height: 50px;
 }
 
-.other {
+/* .other {
   width: 80%;
   height: 80px;
-}
+} */
 
 .btn {
   margin: 10px;
 }
 
-#add {
+/* #add {
   width: 15%;
-}
+} */
 
 .copyThis {
   width: 100%;
@@ -77,3 +79,12 @@
   background-color: #28a745;
   color: white;
 }
+
+#minWidth {
+  min-width: 250px;
+  background-color: mediumpurple;
+  border-color: mediumpurple;
+
+}
+
+
