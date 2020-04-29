@@ -13,6 +13,7 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <script src="https://kit.fontawesome.com/9da84e6a08.js" crossorigin="anonymous"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
@@ -80,14 +81,18 @@
                   rows="3"
                 ></textarea>
               </div>
-              <div class="form-group">
-                <label for="add">Task Notes</label>
-                <textarea
-                  class="form-control other"
-                  id="add"
-                  value=""
-                  rows="3"
-                ></textarea>
+            
+              <div class="custom-control custom-checkbox">
+                <input value = "PHJ" type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">PHJ</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                <label class="custom-control-label" for="customCheck2">Eform</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck3">
+                <label class="custom-control-label" for="customCheck3">Email or fax</label>
               </div>
             </form>
           </div>
@@ -95,60 +100,36 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-5">
           <div class="row">
+ 
             <div class="list-group" id="printArray">
               <a
-                href="#"
+                
                 class="list-group-item list-group-item-action active"
                 id="minWidth"
               >
+
+              <div class="list-group-item list-group-item-action active" id = "minWidth">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1" >Task Flow</h5>
                 </div>
               </a>
-              <!-- <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">
-                  Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                  diam eget risus varius blandit.
-                </p>
-                <small class="text-muted">Donec id elit non mi porta.</small>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">
-                  Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                  diam eget risus varius blandit.
-                </p>
-                <small class="text-muted">Donec id elit non mi porta.</small>
-                <button value="" type="button" class="btn btn-warning del-btn">
-                  Complete
-                </button>
-              </a> -->
+ 
             </div>
-            <!-- <div>
-              Tasks
-            </div> -->
+        
           </div>
 
-          <!-- <div class="row array">
-            <div id="printArray"></div>
-          </div> -->
+       
         </div>
+      </div>
+      <div class = "row">
+        <p id = "testing"></p>
       </div>
 
       <footer>
         <div class="row space">
           <div class="output" id="output"></div>
         </div>
-        <!-- <div class="row space">
-          <div class="output" id="helloValue">Hello</div>
-        </div> -->
+  
       </footer>
     </div>
   </body>

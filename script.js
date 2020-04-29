@@ -24,65 +24,109 @@ $("#hello").click(function () {
   var contractNum = $("#contractnum").val();
   var nameVal = $("#name").val() + ", " + $("#relationship").val();
   var infoVal = $("#other").val();
-  var taskVal = $("#add").val();
 
-  taskDisplay.append(
-    `
+  var checkBox = $("#customCheck1").prop("checked");
+  var checkBoxTwo = $("#customCheck2").prop("checked");
+  var checkBoxThree = $("#customCheck3").prop("checked");
+  check();
+  checkEmail();
+  checkEform();
 
-<a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">` +
-      contractNum +
-      `</h5>
-                  <small class="text-muted">` +
-      nameVal +
-      `</small>
-                </div>
-                <p class="mb-1">
-                  ` +
-      infoVal +
+  function check() {
+    if (checkBox == true) {
+      return (
+        `<i class="fab fa-product-hunt phj-btn fa-lg wide" value = ` +
+        contractNum +
+        `></i>`
+      );
+    } else {
+      return "";
+    }
+  }
+  function checkEmail() {
+    if (checkBoxTwo == true) {
+      return (
+        `<i class="fas fa-envelope-square em-btn fa-lg wide" value = ` +
+        contractNum +
+        `></i>`
+      );
+    } else {
+      return "";
+    }
+  }
+
+  function checkEform() {
+    if (checkBoxThree == true) {
+      return (
+        `<i class="fas fa-file-import ef-btn fa-lg wide" value = ` +
+        contractNum +
+        `></i>`
+      );
+    } else {
+      return "";
+    }
+  }
+  appendFile();
+
+  function appendFile() {
+    taskDisplay.append(
       `
+  
+  <a class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1">` +
+        contractNum +
+        ` (` +
+        nameVal +
+        `)
+        </h6>
+                    <small class="text-muted">                   <i class="fas fa-clipboard-check del-btn fa-3x" value = ` +
+        contractNum +
+        `></i>
+                    </small>
+                  </div><p class="mb-1 text">
+                  ` +
+        infoVal +
+        `
                 </p>
-                <small class="text-muted">` +
-      taskVal +
-      `</small>
-                <button value="` +
-      contractNum +
-      `" type="button" class="btn btn-warning del-btn">
-                  Complete
-                </button>
-              </a>
+                   <p class="mb-1">
+                     ` +
+        check() +
+        checkEmail() +
+        checkEform() +
+        `
+                   </p>
+                  
 
 
-`
+                </a>
+  
+  
+  `
+    );
+  }
 
-    // `
+  taskDisplay.on("click", ".phj-btn", function () {
+    taskArray.splice(taskArray.indexOf($(this).val()), 1);
+    $(this).remove();
+  });
 
-    // <div class = "card">
-    // <div class="card-body" id = "helloValue">
-    //   <h5 class="card-title">` +
-    //   contractNum +
-    //   " - " +
-    //   nameVal +
-    //   `</h5>
-    //   <p class="card-text">` +
-    //   infoVal +
-    //   `</p><button value = "` +
-    //   contractNum +
-    //   `" type = 'button' class = 'btn btn-warning del-btn'>Complete</button>
+  taskDisplay.on("click", ".ef-btn", function () {
+    taskArray.splice(taskArray.indexOf($(this).val()), 1);
+    $(this).remove();
+  });
 
-    // </div>
-    // </div>
-
-    // `
-  );
+  taskDisplay.on("click", ".em-btn", function () {
+    taskArray.splice(taskArray.indexOf($(this).val()), 1);
+    $(this).remove();
+  });
 
   $("#add").val("");
 });
 
 taskDisplay.on("click", ".del-btn", function () {
   taskArray.splice(taskArray.indexOf($(this).val()), 1);
-  $(this).parent().remove();
+  $(this).parent().parent().parent().remove();
 });
 
 function updatePreview() {
