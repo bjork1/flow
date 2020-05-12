@@ -12,6 +12,17 @@ var count = 0;
 var i;
 var taskArray = [];
 
+window.onSpotifyWebPlaybackSDKReady = () => {
+  const userAccessToken = "[79b94fa7ac944da6be26a6f34b562afc]";
+  const webPlayback = new Spotify.Player({
+    name: "Spotify Web Playback SDK",
+    getOAuthToken: (callback) => {
+      callback(token);
+    },
+  });
+  webPlayback.connect();
+};
+
 function copyTaskValue(element) {
   var $temp = $("<input>");
   $($thisValue).append($temp);
@@ -29,8 +40,9 @@ $("#hello").click(function () {
   var checkBoxTwo = $("#customCheck2").prop("checked");
   var checkBoxThree = $("#customCheck3").prop("checked");
   check();
-  checkEmail();
+
   checkEform();
+  checkEmail();
 
   function check() {
     if (checkBox == true) {
@@ -43,8 +55,20 @@ $("#hello").click(function () {
       return "";
     }
   }
-  function checkEmail() {
+
+  function checkEform() {
     if (checkBoxTwo == true) {
+      return (
+        `<i class="fas fa-file-import ef-btn fa-lg wide" value = ` +
+        contractNum +
+        `></i>`
+      );
+    } else {
+      return "";
+    }
+  }
+  function checkEmail() {
+    if (checkBoxThree == true) {
       return (
         `<i class="fas fa-envelope-square em-btn fa-lg wide" value = ` +
         contractNum +
@@ -55,17 +79,6 @@ $("#hello").click(function () {
     }
   }
 
-  function checkEform() {
-    if (checkBoxThree == true) {
-      return (
-        `<i class="fas fa-file-import ef-btn fa-lg wide" value = ` +
-        contractNum +
-        `></i>`
-      );
-    } else {
-      return "";
-    }
-  }
   appendFile();
 
   function appendFile() {
@@ -92,9 +105,8 @@ $("#hello").click(function () {
                    <p class="mb-1">
                      ` +
         check() +
-        checkEmail() +
         checkEform() +
-        `
+        checkEmail() +`
                    </p>
                   
 
